@@ -11,4 +11,4 @@
 
 >Não se esqueça de caprichar na interface utilizando o twitter bootstrap.
 
->O projeto precisa ser execultado por um servidor com a pasta publica,nele você podera encontrar uma listagem de clientes onde podera ser ordenada >de forma acendende ou descendente.
+>O projeto precisa ser execultado por um servidor com a pasta publica,nele você podera encontrar uma listagem de clientes onde podera ser ordenada >de forma acendende ou descendente....
