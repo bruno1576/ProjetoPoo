@@ -1,24 +1,25 @@
 <?php
 
-
-
-class Cliente{
+class Cliente  {
     private $id;
+    private $TipoCliente;
     private $Nome;
     private $idade;
     private $sexo;
-    private $cpf;
     private $endereco;
     private $telefone;
 
-  public function __construct ($id,$Nome,$idade,$sexo,$cpf,$endereco,$telefone){
+    
+
+  public function __construct ($id,$TipoCliente,$Nome,$idade,$sexo,$endereco,$telefone){
         $this->id=$id;
+        $this->TipoCliente=$TipoCliente;
         $this->Nome=$Nome;
      $this->idade=$idade;
      $this->sexo=$sexo;
-     $this->cpf=$cpf;
      $this->endereco=$endereco;
      $this->telefone=$telefone;
+  
 
     }   
 
@@ -29,6 +30,14 @@ class Cliente{
         
 
         $this->id= $id;
+    }
+    public function getTipoCliente(){
+        return $this->TipoCliente;
+    }
+    public function setTipoClientee($TipoCliente){
+        
+
+        $this->TipoCliente= $TipoCliente;
     }
 
  public function getNome(){
@@ -57,15 +66,6 @@ class Cliente{
         $this->sexo= $sexo;
     }
 
-     public function getcpf(){
-        return $this->cpf;
-    }
-    public function setcpf($cpf){
-        
-
-        $this->cpf= $cpf;
-    }
-
 
      public function getendereco(){
         return $this->endereco;
@@ -85,6 +85,10 @@ class Cliente{
 
         $this->telefone= $telefone;
     }
+
+   
+
+   
 }
 
 

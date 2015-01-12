@@ -19,7 +19,7 @@
     
     
         if  ($urllimpa==""){  
-            require_once('../src/home.php');
+            require_once(__DIR__.'/../src/home.php');
         }
     
         elseif  (array_key_exists($path, $rotasValidas)){

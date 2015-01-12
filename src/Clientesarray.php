@@ -57,6 +57,7 @@ if( $_SESSION['ordem'] =="asc"){
                                        }       
 
      }
-}
+}     
+
 
 ?>
