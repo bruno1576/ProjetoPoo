@@ -1,6 +1,7 @@
 <?php
     
-    function Validarota(){
+    function Validarota()
+    {
     
     
        $rota = parse_url("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
@@ -18,17 +19,20 @@
     
     
     
-        if  ($urllimpa==""){  
+        if  ($urllimpa=="")
+        {  
             require_once(__DIR__.'/../src/home.php');
         }
     
-        elseif  (array_key_exists($path, $rotasValidas)){
+        elseif  (array_key_exists($path, $rotasValidas))
+        {
     
             require_once($arquivo);
    
     
         }
-         else{
+         else
+         {
     
             header('HTTP/1.0 404 Not Found');
             echo "<h1>404 Not Found</h1>";
@@ -38,27 +42,33 @@
     
           }
     }    
+
     
-    function enviacontato(){
-        if($_POST){
+    function enviacontato()
+    {
+        if($_POST)
+        {
         $nome=$_POST['nome'];
         $email=$_POST['email'];
         $assunto=$_POST['assunto'];
         $mensagem=$_POST['mensagem'];
         }
-        if(empty($nome) or empty($nome)or empty($assunto)or empty($mensagem)){
+        if(empty($nome) or empty($nome)or empty($assunto)or empty($mensagem))
+        {
         $class=("alert alert-error");
         $resultado="preencha todos os campos para enviar a mensagem ";
           $cod=FALSE;
     
-        }else{
+        }else
+        {
             $resultado="Campos preenchidos com sucesso ";
             echo "<h3>DADOS ENVIADOS COM SUCESSO!</h3>";
     
             $cod=TRUE;    
-    }
+        }
     
-     if($cod==true){
+     if($cod==true)
+     {
         echo "<h5>Seus dados que foram enviados!:";
         echo "<h5>Nome: " . $_POST['nome'] . " <br>";
         echo "Email: " . $_POST['email'] . " <br>";
@@ -75,7 +85,8 @@
     
     
     
-        function camposdocontato(){
+        function camposdocontato()
+    {
     $conn=conexaoDB();
     
     $sql="select * from paginacontato ";
@@ -89,7 +100,9 @@
     
     }
     
-    function consultaempresa(){
+
+    function consultaempresa()
+    {
     
     $conn=conexaoDB();
     $sql="select * from pagina where titulo='Empresa'";
@@ -99,7 +112,8 @@
     $conteudodapagina=$conteudo;
     return $conteudodapagina;
     }
-    function consultahome(){
+    function consultahome()
+    {
     
     $conn=conexaoDB();
     
@@ -111,7 +125,10 @@
     $conteudodapagina=$conteudo;
     return $conteudodapagina;
     }
-    function consultaproduto(){
+
+
+    function consultaproduto()
+    {
     $conn=conexaoDB();
     
     $sql="select * from pagina where titulo='Produtos'";
@@ -123,7 +140,10 @@
     return $conteudodapagina;
     }
     
-    function consultaresultado(){
+
+    function consultaresultado()
+    
+    {
     
     $busca=$_POST['txtBusca'];
     $conn=conexaoDB();
@@ -138,7 +158,9 @@
     return $row;
     }
     
-    function consultaservicos(){
+    function consultaservicos()
+    
+    {
     
     $conn=conexaoDB();
     
@@ -151,8 +173,11 @@
     return $conteudodapagina;
     }
 
-  function updatehome(){
- if($_POST){
+  function updatehome()
+  
+  {
+ if($_POST)
+       {
         $conteudo=$_POST['editor1'];
 
  
@@ -165,8 +190,10 @@
    
   }
 
-function updateempresa(){
- if($_POST){
+function updateempresa()
+{
+ if($_POST)
+       {
         $conteudo=$_POST['editor1'];
 
  
@@ -179,7 +206,8 @@ function updateempresa(){
 }
 
 
-function updateprodutos(){
+function updateprodutos()
+{
  if($_POST){
         $conteudo=$_POST['editor1'];
 
@@ -189,9 +217,10 @@ function updateprodutos(){
           $smt->bindParam(':conteudo', $conteudo, PDO::PARAM_STR);  
     $smt->execute();
 
-        }
+          }
 }
-function updateservicos(){
+function updateservicos()
+{
  if($_POST){
         $conteudo=$_POST['editor1'];
 
@@ -201,10 +230,11 @@ function updateservicos(){
           $smt->bindParam(':conteudo', $conteudo, PDO::PARAM_STR);  
     $smt->execute();
 
-        }
+          }
 }
 
-function Menuadm(){
+function Menuadm()
+{
 
        if(isset($_SESSION['logado']) and $_SESSION['logado']==1)
        {
@@ -215,7 +245,9 @@ function Menuadm(){
              echo  " <li>"."<a href='admempresa'>". "<i class='icon-star'>"."</i>". "Empresa adm"." </a>"."</li>";
               echo  " <li>"."<a href='admservicos'>". "<i class='icon-star'>"."</i>". "serviços adm"." </a>"."</li>";
       
-       }else{
+       }
+       else
+       {
            
 
               echo  " <li>"."<a href='areaadm'>". "<i class='icon-star'>"."</i>". "Area administrativa"." </a>"."</li>";
@@ -225,7 +257,8 @@ function Menuadm(){
 }
 
 
-    function botaologout(){
+    function botaologout()
+ {
  if(isset($_SESSION['logado']) and $_SESSION['logado']==1)
        {
            
@@ -236,9 +269,20 @@ function Menuadm(){
              
       
        }
-       }
+ }
 
 
 
-?>
 
+ // function botaovoltarinfo(){
+         
+     //          if(isset($_GET['id'])){
+      //                  echo  "<a href='ListaClientes' class='btn btn-primary btn-xs'>";
+		 // 				echo	"<i class='glyphicon glyphicon-arrow-up'>"."</i>";
+        //                      echo "Limpar";
+		 // 			echo
+       //               	"</a>";
+
+      //                                   }       
+
+     //  }    

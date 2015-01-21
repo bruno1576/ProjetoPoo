@@ -27,4 +27,21 @@
 
 >Você também terá a opção de criar clientes que utilizão endereço específico de cobrança, nesse caso, crie uma interface para que esses tipos de clientes possam implementar.
 
->O projeto precisa ser execultado por um servidor com a pasta publica,nele você podera encontrar uma listagem de clientes onde podera ser ordenada >de forma acendende ou descendente....
+
+
+
+
+##Refatoração##
+
+>Refatore as classes utilizadas de seu projeto para que as mesmas trabalhem com namespaces.
+
+>Verifique se dentro de seu projeto há a necessidade de se trabalhar com classes abstratas.
+
+>Não se esqueça de criar a estrutura de diretórios, nome de arquivos e classes seguindo a PSR-0 (www.php-fig.org).
+
+>Faça a implementação do autoload para que você não precise mais trabalhar com require/include para a chamada de suas classes.
+
+>Deixe todo o fonte de sua aplicação no mesmo nível que o DocumentRoot do servidor web. Deixe a pasta que está visível para web (seu DocumentRoot) apenas com o index.php e os demais assets(css, javascript e imagens).
+
+
+>O projeto precisa ser execultado por um servidor com a pasta publica,nele você podera encontrar uma listagem de clientes onde podera ser ordenada >de forma acendende ou descendente....foi implantado classes e o autoload...
