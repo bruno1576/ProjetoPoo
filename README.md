@@ -1,15 +1,15 @@
 ##0.1.x##
 
 ##Cadastro de clientes##
->Crie uma classe com os principais atributos que um cliente deve ter, como nome, cpf, endereÁo, etc.
+>Crie uma classe com os principais atributos que um cliente deve ter, como nome, cpf, endereÔøΩo, etc.
 
 >Crie um array de objetos de clientes, com 10 clientes dentro.
 
->Crie uma p·gina e faÁa a listagem geral dos clientes. Quando clicar sobre o cliente, vocÍ dever· mostrar os dados especÌficos >do cliente selecionado.
+>Crie uma pÔøΩgina e faÔøΩa a listagem geral dos clientes. Quando clicar sobre o cliente, vocÔøΩ deverÔøΩ mostrar os dados especÔøΩficos >do cliente selecionado.
 
->Nessa listagem vocÍ tambÈm dever· ter a opÁ„o de ordenar os clientes pelo seu Ìndice de forma ascendente e descendente.
+>Nessa listagem vocÔøΩ tambÔøΩm deverÔøΩ ter a opÔøΩÔøΩo de ordenar os clientes pelo seu ÔøΩndice de forma ascendente e descendente.
 
->N„o se esqueÁa de caprichar na interface utilizando o twitter bootstrap.
+>NÔøΩo se esqueÔøΩa de caprichar na interface utilizando o twitter bootstrap.
 
 
 
@@ -17,31 +17,50 @@
 
 ##Tipos de clientes##
 
->Agora que vocÍ j· tem seu cadastro de cliente, vocÍ dever· tambÈm aceitar clientes Pessoa JurÌdica em sua listagem.
+>Agora que vocÔøΩ jÔøΩ tem seu cadastro de cliente, vocÔøΩ deverÔøΩ tambÔøΩm aceitar clientes Pessoa JurÔøΩdica em sua listagem.
 
->N„o se esqueÁa de trabalhar com os modificadores de acesso e os getters e setters.
+>NÔøΩo se esqueÔøΩa de trabalhar com os modificadores de acesso e os getters e setters.
 
->No momento da listagem dos clientes, vocÍ deve indicar em uma das colunas se o cliente È pessoa fÌsica ou jurÌdica.
+>No momento da listagem dos clientes, vocÔøΩ deve indicar em uma das colunas se o cliente ÔøΩ pessoa fÔøΩsica ou jurÔøΩdica.
 
->Ambos os tipos devem implementar uma interface onde seja possÌvel classificar o grau de import‚ncia do cliente para a empresa (ex: cliente 1,2,3,5 estrelas).
+>Ambos os tipos devem implementar uma interface onde seja possÔøΩvel classificar o grau de importÔøΩncia do cliente para a empresa (ex: cliente 1,2,3,5 estrelas).
 
->VocÍ tambÈm ter· a opÁ„o de criar clientes que utiliz„o endereÁo especÌfico de cobranÁa, nesse caso, crie uma interface para que esses tipos de clientes possam implementar.
-
-
+>VocÔøΩ tambÔøΩm terÔøΩ a opÔøΩÔøΩo de criar clientes que utilizÔøΩo endereÔøΩo especÔøΩfico de cobranÔøΩa, nesse caso, crie uma interface para que esses tipos de clientes possam implementar.
 
 
 
-##RefatoraÁ„o##
+
+
+##RefatoraÔøΩÔøΩo##
 
 >Refatore as classes utilizadas de seu projeto para que as mesmas trabalhem com namespaces.
 
->Verifique se dentro de seu projeto h· a necessidade de se trabalhar com classes abstratas.
+>Verifique se dentro de seu projeto hÔøΩ a necessidade de se trabalhar com classes abstratas.
 
->N„o se esqueÁa de criar a estrutura de diretÛrios, nome de arquivos e classes seguindo a PSR-0 (www.php-fig.org).
+>NÔøΩo se esqueÔøΩa de criar a estrutura de diretÔøΩrios, nome de arquivos e classes seguindo a PSR-0 (www.php-fig.org).
 
->FaÁa a implementaÁ„o do autoload para que vocÍ n„o precise mais trabalhar com require/include para a chamada de suas classes.
+>FaÔøΩa a implementaÔøΩÔøΩo do autoload para que vocÔøΩ nÔøΩo precise mais trabalhar com require/include para a chamada de suas classes.
 
->Deixe todo o fonte de sua aplicaÁ„o no mesmo nÌvel que o DocumentRoot do servidor web. Deixe a pasta que est· visÌvel para web (seu DocumentRoot) apenas com o index.php e os demais assets(css, javascript e imagens).
+>Deixe todo o fonte de sua aplicaÔøΩÔøΩo no mesmo nÔøΩvel que o DocumentRoot do servidor web. Deixe a pasta que estÔøΩ visÔøΩvel para web (seu DocumentRoot) apenas com o index.php e os demais assets(css, javascript e imagens).
 
 
->O projeto precisa ser execultado por um servidor com a pasta publica,nele vocÍ podera encontrar uma listagem de clientes onde podera ser ordenada >de forma acendende ou descendente....foi implantado classes e o autoload...
+##Persist√™ncia de dados##
+
+>Nessa √∫ltima fase do projeto, voc√™, ao inv√©s de trabalhar com arrays, voc√™ dever√° persistir essas informa√ß√µes no banco de dados.
+
+>Em suas fixtures, voc√™ dever√° criar uma classe com m√©todos espec√≠ficos para persistirem dados no banco. Voc√™ ter√° que injetar no construtor dessa classe um objeto PDO (somente PDO).
+
+>Crie um m√©todo chamado persist dentro dessa mesma classe; esse m√©todo dever√° receber como depend√™ncia um objeto do tipo Cliente.
+
+>E para finalizar, crie um m√©todo chamado flush. Quando o m√©todo for executado, os dados devem ser persistidos no banco de dados.
+
+>Perceba que a responsabilidade de gravar os dados no banco s√£o especificamente dessa classe, sem adicionar nenhuma outra responsabilidade a ela.
+
+>Boa sorte!
+
+>PS: Depois disso implementado, a listagem dos clientes devem ser chamadas a partir do banco de dados e n√£o mais de um conjunto de arrays.
+
+
+
+>O projeto precisa ser execultado por um servidor com a pasta publica,nele vocÔøΩ podera encontrar uma listagem de clientes onde podera ser ordenada >de forma acendende ou descendente....foi implantado classes e o autoload...
+>Deve se criar um banco chamado teste e execultar as fun√ß√µes da fixture que est√£o comentadas no listaClientes.php.....
