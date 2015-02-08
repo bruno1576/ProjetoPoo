@@ -12,50 +12,56 @@ class ClientePF extends Cliente implements Interfacestarts, InterfaceCobranca
 
     private $cpf;
     private $starts;
-    private $InterfaceCobranca;
 
-    function __construct($id, $TipoCliente, $Nome, $idade, $sexo, $endereco, $telefone, $cpf, $starts, $InterfaceCobranca)
-    {
-        parent::__construct($id, $TipoCliente, $Nome, $idade, $sexo, $endereco, $telefone);
-        $this->cpf = $cpf;
-        $this->starts = $starts;
-        $this->InterfaceCobranca = $InterfaceCobranca;
-
-    }
-
-
+    /**
+     * @return mixed
+     */
     public function getCpf()
     {
         return $this->cpf;
     }
 
+    /**
+     * @param mixed $cpf
+     */
     public function setCpf($cpf)
     {
         $this->cpf = $cpf;
-        return $this;
     }
 
-    public function getstarts()
+    /**
+     * @return mixed
+     */
+    public function getStarts()
     {
         return $this->starts;
     }
 
+    /**
+     * @param mixed $starts
+     */
     public function setStarts($starts)
     {
-
         $this->starts = $starts;
-        return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getInterfaceCobranca()
     {
         return $this->InterfaceCobranca;
     }
 
+    /**
+     * @param mixed $InterfaceCobranca
+     */
     public function setInterfaceCobranca($InterfaceCobranca)
     {
-
         $this->InterfaceCobranca = $InterfaceCobranca;
-        return $this;
     }
+
+    private $InterfaceCobranca;
+
+
 }

@@ -13,40 +13,26 @@ abstract class Cliente
     private $telefone;
 
 
-    public function __construct($id, $TipoCliente, $Nome, $idade, $sexo, $endereco, $telefone)
-    {
-        $this->id = $id;
-        $this->TipoCliente = $TipoCliente;
-        $this->Nome = $Nome;
-        $this->idade = $idade;
-        $this->sexo = $sexo;
-        $this->endereco = $endereco;
-        $this->telefone = $telefone;
-
-
-    }
-
-    public function getid()
+    public function getId()
     {
         return $this->id;
     }
 
-    public function setid($id)
+
+    public function setId($id)
     {
-
-
         $this->id = $id;
     }
+
 
     public function getTipoCliente()
     {
         return $this->TipoCliente;
     }
 
-    public function setTipoClientee($TipoCliente)
+
+    public function setTipoCliente($TipoCliente)
     {
-
-
         $this->TipoCliente = $TipoCliente;
     }
 
@@ -57,58 +43,53 @@ abstract class Cliente
 
     public function setNome($Nome)
     {
-
-
-        $this->nome = $Nome;
+        $this->Nome = $Nome;
     }
 
-    public function getidade()
+
+    public function getIdade()
     {
         return $this->idade;
     }
 
-    public function setidade($idade)
+    public function setIdade($idade)
     {
-
-
         $this->idade = $idade;
     }
 
-    public function getsexo()
+
+    public function getSexo()
     {
         return $this->sexo;
     }
 
-    public function setsexo($sexo)
+
+    public function setSexo($sexo)
     {
-
-
         $this->sexo = $sexo;
     }
 
 
-    public function getendereco()
+    public function getEndereco()
     {
         return $this->endereco;
     }
 
-    public function setendereco($endereco)
+
+    public function setEndereco($endereco)
     {
-
-
         $this->endereco = $endereco;
     }
 
 
-    public function gettelefone()
+    public function getTelefone()
     {
         return $this->telefone;
     }
 
-    public function settelefone($telefone)
+
+    public function setTelefone($telefone)
     {
-
-
         $this->telefone = $telefone;
     }
 

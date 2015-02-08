@@ -4,33 +4,32 @@
 namespace Projeto2\BD;
 
 
-class ConexaoDB {
+class ConexaoDB
+{
+
+    private $pdo;
 
 
-public  function conexaoDB(){
+    public function __construct($dsn, $dbname, $name, $password)
+    {
 
-    try{
-        $config=include"config.php";
-        if(! isset($config['db'])){
+        try {
+            $this->pdo = new \PDO($dsn, $name, $password);
+            $this->pdo->exec("CREATE DATABASE IF NOT EXISTS $dbname");
+            $this->pdo->exec("USE $dbname");
 
-            throw new \InvalidArgumentException("configuração não existe");
+        } catch (\PDOException $ex) {
+            echo "A conexao falhou" . $ex->getMessage();
 
 
         }
-        $host =(isset($config['db']['host'])) ? $config['db']['host'] : NULL;
-        $dbname =(isset($config['db']['dbname'])) ? $config['db']['dbname'] : NULL;
-        $user =(isset($config['db']['user'])) ? $config['db']['user'] : NULL;
-        $password =(isset($config['db']['password'])) ? $config['db']['password'] : NULL;
 
-        return new \PDO("mysql:host={$host};dbname={$dbname}", $user , $password);
-
-
-
-    }catch (\PDOException $e){
-        echo $e->getMessage()."\n";
-        echo $e->getTraceAsString()."\n";
     }
 
-}
+    public function getConnection()
+    {
+        return $this->pdo;
+    }
+
 
 }

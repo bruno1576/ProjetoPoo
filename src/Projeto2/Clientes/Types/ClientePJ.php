@@ -14,47 +14,38 @@ class ClientePJ extends Cliente implements Interfacestarts, InterfaceCobranca
     private $cnpj;
     private $InterfaceCobranca;
 
-    function __construct($id, $TipoCliente, $Nome, $idade, $sexo, $endereco, $telefone, $cnpj, $starts, $InterfaceCobranca)
-    {
-        parent::__construct($id, $TipoCliente, $Nome, $idade, $sexo, $endereco, $telefone);
-        $this->cnpj = $cnpj;
-        $this->starts = $starts;
-        $this->InterfaceCobranca = $InterfaceCobranca;
-    }
-
-
-    public function getcnpj()
+    public function getCnpj()
     {
         return $this->cnpj;
     }
 
-    public function setcnpj($cnpj)
+    public function setCnpj($cnpj)
     {
         $this->cnpj = $cnpj;
-        return $this;
     }
 
-    public function getstarts()
-    {
-        return $this->starts;
-    }
-
-    public function setStarts($starts)
-    {
-
-        $this->starts = $starts;
-        return $this;
-    }
 
     public function getInterfaceCobranca()
     {
         return $this->InterfaceCobranca;
     }
 
+
     public function setInterfaceCobranca($InterfaceCobranca)
     {
-
         $this->InterfaceCobranca = $InterfaceCobranca;
-        return $this;
     }
+
+    public function getStarts()
+    {
+        return $this->starts;
+    }
+
+
+    public function setStarts($starts)
+    {
+        $this->starts = $starts;
+    }
+
+
 }
